@@ -3,7 +3,7 @@
 // Variables
 
 const autoprefixer = require('autoprefixer');
-const constbrowserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create();
 const del = require('del');
 const gulp = require('gulp');
 const mincss = require('gulp-csso');
@@ -163,11 +163,7 @@ var serve = function () {
 
 // Gulp tasks
 
-gulp.task('build', gulp.series(
-  cleanbuild,
-  gulp.parallel(copyfonts, copyvideo, copysvg, copybitmap),
-  scripts, style, html
-));
+gulp.task('build', gulp.series(cleanbuild, gulp.parallel(copyfonts, copyvideo, copysvg, copybitmap),scripts, style, html));
 gulp.task('serve', serve);
 
 gulp.task('imagemin', gulp.parallel(minsvg, minbitmap));
