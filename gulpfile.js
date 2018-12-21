@@ -2,28 +2,27 @@
 
 // Variables
 
-var
-  autoprefixer = require('autoprefixer'),
-  browserSync = require('browser-sync').create(),
-  del = require('del'),
-  gulp = require('gulp'),
-  mincss = require('gulp-csso'),
-  minimage = require('gulp-imagemin'),
-  minjs = require('gulp-terser'),
-  mozjpeg = require('imagemin-mozjpeg'),
-  notify = require('gulp-notify'),
-  plumber = require('gulp-plumber'),
-  pngquant = require('imagemin-pngquant'),
-  postcss = require('gulp-postcss'),
-  pug = require('gulp-pug'),
-  rename = require('gulp-rename'),
-  sass = require('gulp-sass'),
-  sassglob = require('gulp-sass-glob'),
-  zopfli = require('imagemin-zopfli');
+const autoprefixer = require('autoprefixer');
+const constbrowserSync = require('browser-sync').create();
+const del = require('del');
+const gulp = require('gulp');
+const mincss = require('gulp-csso');
+const minimage = require('gulp-imagemin');
+const minjs = require('gulp-terser');
+const mozjpeg = require('imagemin-mozjpeg');
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
+const pngquant = require('imagemin-pngquant');
+const postcss = require('gulp-postcss');
+const pug = require('gulp-pug');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sassglob = require('gulp-sass-glob');
+const zopfli = require('imagemin-zopfli');
 
 // Task functions
 
-var minsvg = function () {
+const minsvg = function () {
   return gulp.src('./specification/img-raw/*.svg')
     .pipe(minimage([
       minimage.svgo({
@@ -73,10 +72,10 @@ var minsvg = function () {
           {removeScriptElement: true}
       ]})
     ]))
-    .pipe(gulp.dest('./source/img/'));
-}
+    .pipe(gulp.dest('./source/assets/images/'));
+};
 
-var minbitmap = function () {
+const minbitmap = function () {
   return gulp.src('./specification/img-raw/*.{jpg,png}')
     .pipe(minimage([
       pngquant({
@@ -93,25 +92,30 @@ var minbitmap = function () {
         quality: 90
       })
     ]))
-    .pipe(gulp.dest('./source/img/'));
-}
+    .pipe(gulp.dest('./source/assets/images/'));
+};
 
-var cleanbuild = function () {
+const cleanbuild = function () {
   return del('./build/');
-}
+};
+
+const copyvideo = function () {
+  return gulp.src('./source/assets/video/*.mp4')
+    .pipe(gulp.dest('./build/video/'));
+};
 
 var copyfonts = function () {
-  return gulp.src('./source/fonts/*.{woff,woff2}')
+  return gulp.src('./source/assets/fonts/*.{woff,woff2}')
     .pipe(gulp.dest('./build/fonts/'));
 }
 
 var copysvg = function () {
-  return gulp.src('./source/img/*.svg')
+  return gulp.src('./source/assets/images/*.svg')
     .pipe(gulp.dest('./build/img/'));
 }
 
 var copybitmap = function () {
-  return gulp.src('./source/img/*.{jpg,png}')
+  return gulp.src('./source/assets/images/*.{jpg,png}')
     .pipe(gulp.dest('./build/img/'));
 }
 
@@ -159,7 +163,11 @@ var serve = function () {
 
 // Gulp tasks
 
-gulp.task('build', gulp.series(cleanbuild, copyfonts, copysvg, copybitmap, scripts, style, html));
+gulp.task('build', gulp.series(
+  cleanbuild,
+  gulp.parallel(copyfonts, copyvideo, copysvg, copybitmap),
+  scripts, style, html
+));
 gulp.task('serve', serve);
 
 gulp.task('imagemin', gulp.parallel(minsvg, minbitmap));

@@ -1,0 +1,13 @@
+@mixin font($fontWeight: 400, $fontSize: 24px, $lineHeight: 32px) {
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-family: "Gotham Pro", "Arial", sans-serif;
+}
+
+@mixin list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
