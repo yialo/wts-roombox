@@ -1,4 +1,14 @@
-mixin page-header()
-  header.page-header
-    h1 Test
-    p This is a test...
+mixin roombox--_page-header()
+  header.roombox--_page-header
+    .roombox--_page-header__container
+      .roombox--_logo.roombox--_page-header__logo
+        img.roombox--_logo__image(src='img/logo.png' alt='Roombox')
+        h1.roombox--_visually-hidden Roombox
+      mixin roombox--_page-header__item(pageHeaderItem_text)
+        li.roombox--_page-header__item= pageHeaderItem_text
+      ul.roombox--_page-header__list.roombox--_page-header__list--overall
+        each value in pageHeaderList_overall
+          +roombox--_page-header__item(value)
+      ul.roombox--_page-header__list.roombox--_page-header__list--technologies
+        each value in pageHeaderList_technologies
+          +roombox--_page-header__item(value)
