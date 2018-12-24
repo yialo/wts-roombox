@@ -25,8 +25,7 @@
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^6.0.0",
     "imagemin-zopfli": "^5.1.0",
-    "stylelint": "^9.6.0",
-    "stylelint-config-htmlacademy": "^0.1.1"
+    "stylelint": "^9.6.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
