@@ -1,0 +1,16 @@
+.roombox-aligner {
+  @include margin-hor;
+  width: $s-min-width;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include outline;
+
+  @media (min-width: $m-min-width) {
+    width: $m-min-width;
+  }
+
+  @media (min-width: $l-min-width) {
+    width: $l-min-width;
+  }
+}

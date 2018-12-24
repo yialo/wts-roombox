@@ -1,3 +1,37 @@
-mixin roombox--_page-main()
-  main.roombox--_page-main
-
+mixin roombox-page-main()
+  main.roombox-page-main
+    header.roombox-video.roombox-page-main__banner
+      video.roombox-video__container.roombox-aligner(
+        src='video/roombox-promo.mp4'
+        autoplay controls
+      )
+        = 'Вы можете скачать вступительный ролик по этой '
+        a(href='video/roombox-promo.mp4' target='_blank') ссылке
+    section.roombox-task.roombox-page-main__task
+      .roombox-aligner.roombox-task__container
+        ul.roombox-task__list
+          mixin roombox-task__item(taskImageNumber)
+            li.roombox-task__item.roombox-task__item--image
+              .roombox-task__numbering
+                = '////////////////// '
+                span.roombox-task__number= taskImageNumber
+                = ' /'
+              img.roombox-task__image(
+                src=`img/task__image--${taskImageNumber}.jpg`
+                alt=`Шаг ${taskImageNumber}`
+              )
+          li.roombox-task__item
+            h2.roombox-heading.roombox-task__caption Задача
+            p.roombox-task__paragraph
+              | Разработка сервиса, максимально удобного для создания онлайн-интерьера самим пользователем, который сможет самостоятельно создавать желаемый вид и обстановку каждой комнаты.
+            p.roombox-task__paragraph
+              | Площадка должна позволить оценить стоимость ремонта в зависимости от метража, типа материалов и других параметров, необходимых для точного расчета.
+            p.roombox-task__paragraph
+              | Создать сервис, позволяющий значительно упростить и сократить время работы проектного персонала, который должен учесть при сборе информации все требования клиентов.
+          - var i = 1;
+            while i <= 13
+              +roombox-task__item(i++)
+    section.roombox-development.roombox--page-main__development
+      .roombox-aligner.roombox-development__container
+        h2.roombox-heading.roombox-development__heading Проектирвоание и дизайн интерфейса
+        .roombox-development__content

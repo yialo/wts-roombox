@@ -1,8 +1,13 @@
-@mixin font($fontWeight: 400, $fontSize: 24px, $lineHeight: 32px) {
+@mixin font($fontWeight: 400, $fontSize: 18px, $lineHeight: 27px) {
   font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
-  font-family: "Gotham Pro", sans-serif;
+  font-family: "Gotham Pro", "Arial", sans-serif;
+}
+
+@mixin margin-hor($marginHorizontal: auto) {
+  margin-left: $marginHorizontal;
+  margin-right: $marginHorizontal;
 }
 
 @mixin list {
@@ -10,4 +15,9 @@
   margin-bottom: 0;
   padding-left: 0;
   list-style-type: none;
+}
+
+@mixin outline {
+  outline: 1px solid green;
+  outline-offset: -1px;
 }

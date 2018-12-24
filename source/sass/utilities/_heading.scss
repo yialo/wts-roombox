@@ -1,0 +1,10 @@
+.roombox-heading {
+  @include font(900, 32px, 32px);
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @media (min-width: $m-min-width) {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}

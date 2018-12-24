@@ -1,3 +1,24 @@
-.roombox--_page-header__list {
+.roombox-page-header__container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.roombox-page-header__logo {
+  @include margin-hor;
+  width: 300px;
+  margin-bottom: 20px;
+
+  @media (min-width: $m-min-width) {
+    width: 428px;
+  }
+}
+
+.roombox-page-header__list {
   @include list;
+  @include font(400, 18px, 32px);
+  color: $middle-gray;
+}
+
+.roombox-page-header__item {
+  text-align: center;
 }
