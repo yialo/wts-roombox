@@ -4,8 +4,9 @@
   font-family: "Gotham Pro";
   font-display: swap;
 
-  src: local("Gotham Pro"),
-    local("GothamPro"),
+  // src: local("Gotham Pro"),
+  //   local("GothamPro"),
+  src:
     url("../fonts/gothampro-regular.woff2") format("woff2"),
     url("../fonts/gothampro-regular.woff") format("woff");
 }
