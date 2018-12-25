@@ -4,10 +4,18 @@ mixin roombox-page-header()
       .roombox-logo.roombox-page-header__logo
         picture.roombox-logo__image-wrapper
           source(
-            media=viewportMediumMinWidth
-            srcset='img/logo--m.png'
+            media=viewportLargeMinWidth
+            srcset='img/logo@428w.png'
           )
-        img.roombox-logo__image(src='img/logo--s.png' alt='Roombox')
+          source(
+            media=viewportMediumMinWidth
+            srcset='img/logo@300w.png'
+          )
+          source(
+            media=viewportHeaderListTwoColumnMinWidth
+            srcset='img/logo@400w.png'
+          )
+        img.roombox-logo__image(src='img/logo@300w.png' alt='Roombox')
         h1.roombox-visually-hidden Roombox
       mixin roombox-page-header__item(pageHeaderItem_text)
         li.roombox-page-header__item= pageHeaderItem_text

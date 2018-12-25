@@ -2,6 +2,24 @@
   @include list;
   display: grid;
   grid-row-gap: 40px;
+
+  @media (min-width: $m-min-width) {
+    grid-row-gap: 60px;
+  }
+
+  @media (min-width: $l-min-width) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+  }
+}
+
+.roombox-task__item {
+  @media (min-width: $m-min-width) {
+    &--text {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 }
 
 .roombox-task__caption {
@@ -22,11 +40,17 @@
     font-size: 24px;
     line-height: 32px;
   }
+
+  @media (min-width: $l-min-width) {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 .roombox-task__numbering {
   @include font(500, 24px, 24px);
   margin-bottom: 15px;
+  padding-left: 10px;
   color: #e4e4e4;
 }
 

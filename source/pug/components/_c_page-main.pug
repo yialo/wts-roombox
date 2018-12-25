@@ -1,12 +1,13 @@
 mixin roombox-page-main()
   main.roombox-page-main
     header.roombox-video.roombox-page-main__banner
-      video.roombox-video__container.roombox-aligner(
-        src='video/roombox-promo.mp4'
-        autoplay controls
-      )
-        = 'Вы можете скачать вступительный ролик по этой '
-        a(href='video/roombox-promo.mp4' target='_blank') ссылке
+      .roombox-aligner.roombox-video__container
+        video.roombox-video__content(
+          src='video/roombox-promo.mp4'
+          autoplay controls
+        )
+          = 'Вы можете скачать вступительный ролик по этой '
+          a(href='video/roombox-promo.mp4' target='_blank') ссылке
     section.roombox-task.roombox-page-main__task
       .roombox-aligner.roombox-task__container
         ul.roombox-task__list
@@ -16,11 +17,16 @@ mixin roombox-page-main()
                 = '////////////////// '
                 span.roombox-task__number= taskImageNumber
                 = ' /'
-              img.roombox-task__image(
-                src=`img/task__image--${taskImageNumber}.jpg`
-                alt=`Шаг ${taskImageNumber}`
-              )
-          li.roombox-task__item
+              picture.roombox-task__image-wrapper
+                source(
+                  media=viewportHeaderListTwoColumnMinWidth
+                  srcset=`img/task__image--${taskImageNumber}.jpg`
+                )
+                img.roombox-task__image(
+                  src=`img/task__image--${taskImageNumber}@460.jpg`
+                  alt=`Шаг ${taskImageNumber}`
+                )
+          li.roombox-task__item.roombox-task__item--text
             h2.roombox-heading.roombox-task__caption Задача
             p.roombox-task__paragraph
               | Разработка сервиса, максимально удобного для создания онлайн-интерьера самим пользователем, который сможет самостоятельно создавать желаемый вид и обстановку каждой комнаты.
