@@ -4,10 +4,9 @@
   font-family: "Gotham Pro";
   font-display: swap;
 
-  src: local("Gotham Pro"),
-    local("GothamPro"),
-    url("../assets/fonts/gothampro-regular.woff2") format("woff2"),
-    url("../assets/fonts/gothampro-regular.woff") format("woff");
+  src:
+    url("../fonts/gothampro-regular.woff2") format("woff2"),
+    url("../fonts/gothampro-regular.woff") format("woff");
 }
 
 @font-face {
@@ -16,10 +15,9 @@
   font-family: "Gotham Pro";
   font-display: swap;
 
-  src: local("Gotham Pro Medium"),
-    local("GothamPro-Medium"),
-    url("../assets/fonts/gothampro-medium.woff2") format("woff2"),
-    url("../assets/fonts/gothampro-medium.woff") format("woff");
+  src:
+    url("../fonts/gothampro-medium.woff2") format("woff2"),
+    url("../fonts/gothampro-medium.woff") format("woff");
 }
 
 @font-face {
@@ -28,8 +26,7 @@
   font-family: "Gotham Pro";
   font-display: swap;
 
-  src: local("Gotham Pro Black"),
-    local("GothamPro-Black"),
-    url("../assets/fonts/gothampro-black.woff2") format("woff2"),
-    url("../assets/fonts/gothampro-black.woff") format("woff");
+  src:
+    url("../fonts/gothampro-black.woff2") format("woff2"),
+    url("../fonts/gothampro-black.woff") format("woff");
 }

@@ -1,4 +1,27 @@
-mixin page-header()
-  header.page-header
-    h1 Test
-    p This is a test...
+mixin roombox-page-header()
+  header.roombox-page-header
+    .roombox-page-header__container.roombox-aligner
+      .roombox-logo.roombox-page-header__logo
+        picture.roombox-logo__image-wrapper
+          source(
+            media=viewportLargeMinWidth
+            srcset='img/logo@428w.png'
+          )
+          source(
+            media=viewportMediumMinWidth
+            srcset='img/logo@300w.png'
+          )
+          source(
+            media=viewportHeaderListTwoColumnMinWidth
+            srcset='img/logo@400w.png'
+          )
+          img.roombox-logo__image(src='img/logo@300w.png' alt='Roombox')
+        h1.roombox-visually-hidden Roombox
+      mixin roombox-page-header__item(pageHeaderItem_text)
+        li.roombox-page-header__item= pageHeaderItem_text
+      ul.roombox-page-header__list.roombox-page-header__list--overall
+        each value in pageHeaderList_overall
+          +roombox-page-header__item(value)
+      ul.roombox-page-header__list.roombox-page-header__list--technologies
+        each value in pageHeaderList_technologies
+          +roombox-page-header__item(value)

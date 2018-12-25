@@ -1,5 +1,7 @@
-- var viewportMediumMinWidth = '(min-width: 768px)';
-- var viewportLargeMinWidth = '(min-width: 1280px)';
+-
+  var viewportHeaderListTwoColumnMinWidth = '(min-width: 480px)';
+  var viewportMediumMinWidth = '(min-width: 768px)';
+  var viewportLargeMinWidth = '(min-width: 1280px)';
 
 block variables
 
@@ -19,10 +21,10 @@ html(lang='ru')
     link(rel='preload' href='fonts/gothampro-medium.woff2' as='font' crossorigin)
     link(rel='preload' href='fonts/gothampro-black.woff2' as='font' crossorigin)
     link(rel='stylesheet' href='css/main.min.css')
-  body.page
-    .page__header
-      +page-header()
-    .page__main
-      +page-main()
+  body.roombox-page
+    .roombox-page__header
+      +roombox-page-header()
+    .roombox-page__main
+      +roombox-page-main()
     block custom-scripts
     script(src='js/picturefill.js')

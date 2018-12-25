@@ -1,0 +1,70 @@
+.roombox-task__list {
+  @include list;
+  display: grid;
+  grid-row-gap: 40px;
+
+  @media (min-width: $m-min-width) {
+    grid-row-gap: 60px;
+  }
+
+  @media (min-width: $l-min-width) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+  }
+}
+
+.roombox-task__item {
+  @media (min-width: $m-min-width) {
+    &--text {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.roombox-task__caption {
+  margin-bottom: 20px;
+}
+
+.roombox-task__paragraph {
+  @include font;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $middle-gray;
+
+  &:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $m-min-width) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $l-min-width) {
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  @media (min-width: $task-paragraph-font-resize) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.roombox-task__numbering {
+  @include font(500, 24px, 24px);
+  margin-bottom: 15px;
+  padding-left: 10px;
+  color: #e4e4e4;
+}
+
+.roombox-task__number {
+  color: #ff5c64;
+}
+
+.roombox-task__image {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 20px 0 rgba(8, 20, 47, 0.1);
+}

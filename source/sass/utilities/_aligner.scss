@@ -1,0 +1,6 @@
+.roombox-aligner {
+  @include margin-hor;
+  max-width: $l-max-width;
+  padding-left: 10px;
+  padding-right: 10px;
+}

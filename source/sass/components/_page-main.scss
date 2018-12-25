@@ -1,0 +1,12 @@
+.roombox-page-main__banner {
+  width: 100%;
+  margin-bottom: 40px;
+
+  @media (min-width: $m-min-width) {
+    margin-bottom: 60px;
+  }
+}
+
+.roombox-page-main__task {
+  margin-bottom: 50px;
+}

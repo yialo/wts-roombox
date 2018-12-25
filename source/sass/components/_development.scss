@@ -1,0 +1,32 @@
+.roombox-development {
+  background-image: url("../img/page-main__background--s.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: -200px;
+
+  @media (min-width: $m-min-width) {
+    background-image: url("../img/page-main__background--m.jpg");
+    background-position-y: -300px;
+  }
+
+  @media (min-width: $l-min-width) {
+    background-image: url("../img/page-main__background--l.jpg");
+    background-position-y: -600px;
+  }
+}
+
+.roombox-development__container {
+  padding-bottom: 1500px;
+
+  @media (min-width: $m-min-width) {
+    padding-bottom: 2500px;
+  }
+
+  @media (min-width: $l-min-width) {
+    padding-bottom: 3500px;
+  }
+}
+
+.roombox-development__heading {
+  text-align: center;
+}

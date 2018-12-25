@@ -10,7 +10,7 @@ html {
 
 body {
   @include font;
-  min-width: $small-min-width;
+  min-width: $s-min-width;
   margin: 0;
   color: $ultra-dark;
   background-color: white;
