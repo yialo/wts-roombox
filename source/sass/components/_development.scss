@@ -6,10 +6,12 @@
 
   @media (min-width: $m-min-width) {
     background-image: url("../img/page-main__background--m.jpg");
+    background-position-y: -300px;
   }
 
   @media (min-width: $l-min-width) {
     background-image: url("../img/page-main__background--l.jpg");
+    background-position-y: -600px;
   }
 }
 

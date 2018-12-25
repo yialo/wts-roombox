@@ -7,7 +7,7 @@ mixin roombox-page-main()
           autoplay controls
         )
           = 'Вы можете скачать вступительный ролик по этой '
-          a(href='video/roombox-promo.mp4' target='_blank') ссылке
+          a.roombox-video__link(href='video/roombox-promo.mp4' target='_blank') ссылке
     section.roombox-task.roombox-page-main__task
       .roombox-aligner.roombox-task__container
         ul.roombox-task__list
@@ -20,7 +20,7 @@ mixin roombox-page-main()
               picture.roombox-task__image-wrapper
                 source(
                   media=viewportHeaderListTwoColumnMinWidth
-                  srcset=`img/task__image--${taskImageNumber}.jpg`
+                  srcset=`img/task__image--${taskImageNumber}@850.jpg`
                 )
                 img.roombox-task__image(
                   src=`img/task__image--${taskImageNumber}@460.jpg`
