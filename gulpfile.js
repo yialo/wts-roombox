@@ -10,7 +10,6 @@ const mincss = require('gulp-csso');
 const minimage = require('gulp-imagemin');
 const minjs = require('gulp-terser');
 const mozjpeg = require('imagemin-mozjpeg');
-const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
 const pngquant = require('imagemin-pngquant');
 const postcss = require('gulp-postcss');
