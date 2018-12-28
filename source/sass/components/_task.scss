@@ -14,10 +14,14 @@
 }
 
 .roombox-task__item {
-  @media (min-width: $m-min-width) {
+  &--text {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: $l-min-width) {
     &--text {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-right: 0;
     }
   }
 }
