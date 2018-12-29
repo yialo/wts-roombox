@@ -13,13 +13,14 @@
   left: 0;
   z-index: -1;
   width: 100%;
-}
 
-.roombox-development__image-wrapper {
-
+  @media (min-width: $m-min-width) {
+    position: static;
+    overflow: hidden;
+  }
 }
 
 .roombox-development__image {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: calc(100vw * 2958 / 768);
 }
