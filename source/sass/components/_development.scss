@@ -15,8 +15,7 @@
   width: 100%;
 
   @media (min-width: $m-min-width) {
-    position: static;
-    overflow: hidden;
+    --roombox-development__content-vertical-shift-factor: -350;
   }
 }
 
