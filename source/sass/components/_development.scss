@@ -24,12 +24,9 @@
   }
 }
 
-.roombox-development__content-wrapper {
-  @include margin-hor;
-  max-width: $development-image-max-width;
-}
-
 .roombox-development__image {
+  @include margin-hor;
   width: 100%;
+  max-width: $development-image-max-width;
   height: auto;
 }

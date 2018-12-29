@@ -40,18 +40,17 @@ mixin roombox-page-main()
     section.roombox-development.roombox--page-main__development
       h2.roombox-aligner.roombox-heading.roombox-development__heading Проектирование и дизайн интерфейса
       .roombox-development__content
-        .roombox-development__content-wrapper
-          img.roombox-development__image(
-            srcset=`
-              img/development@1920.jpg 1920w,
-              img/development@1280.jpg 1280w,
-              img/development@768.jpg 768w
-            `
-            sizes=`
-              ${viewportSmallMaxWidth} 100vw,
-              ${viewportMediumMaxWidth} 1280px,
-              1920px
-            `
-            src='img/development@1920.jpg'
-            alt='Примеры наших работ'
-          )
+        img.roombox-development__image(
+          srcset=`
+            img/development@1920.jpg 1920w,
+            img/development@1280.jpg 1280w,
+            img/development@768.jpg 768w
+          `
+          sizes=`
+            ${viewportSmallMaxWidth} 100vw,
+            ${viewportMediumMaxWidth} 1280px,
+            1920px
+          `
+          src='img/development@1920.jpg'
+          alt='Примеры наших работ'
+        )
