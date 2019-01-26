@@ -1,10 +1,6 @@
 {
-  "name": "wts-roombox",
-  "version": "1.0.0",
-  "description": "WayToStart portfolio: Roombox",
-  "main": "gulpfile.js",
   "author": "WayToStart",
-  "license": "ISC",
+  "description": "WayToStart portfolio: Roombox",
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "^1.0.0",
     "autoprefixer": "^9.4.3",
@@ -13,7 +9,7 @@
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-csso": "^3.0.1",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-pug": "^4.0.1",
@@ -21,16 +17,24 @@
     "gulp-sass": "^4.0.1",
     "gulp-sass-glob": "^1.0.9",
     "gulp-terser": "^1.1.6",
-    "imagemin-mozjpeg": "^7.0.0",
-    "imagemin-pngquant": "^6.0.1",
-    "imagemin-zopfli": "^5.1.0",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "imagemin-zopfli": "^6.0.0",
     "stylelint": "^9.9.0"
   },
+  "license": "ISC",
+  "main": "gulpfile.js",
+  "name": "wts-roombox",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/alekseiarrowaytostart/wts-roombox.git"
+  },
   "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "npm run build && gulp serve"
-  }
+    "editorconfig": "editorconfig-cli",
+    "start": "npm run build && gulp serve",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "test": "npm run editorconfig && npm run stylelint"
+  },
+  "version": "1.0.0"
 }
