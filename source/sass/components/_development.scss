@@ -1,32 +1,32 @@
 .roombox-development {
-  background-image: url("../img/page-main__background--s.jpg");
-  background-repeat: no-repeat;
-  background-position-x: 50%;
-  background-position-y: -200px;
-
-  @media (min-width: $m-min-width) {
-    background-image: url("../img/page-main__background--m.jpg");
-    background-position-y: -300px;
-  }
-
-  @media (min-width: $l-min-width) {
-    background-image: url("../img/page-main__background--l.jpg");
-    background-position-y: -600px;
-  }
-}
-
-.roombox-development__container {
-  padding-bottom: 1500px;
-
-  @media (min-width: $m-min-width) {
-    padding-bottom: 2500px;
-  }
-
-  @media (min-width: $l-min-width) {
-    padding-bottom: 3500px;
-  }
+  position: relative;
 }
 
 .roombox-development__heading {
   text-align: center;
+}
+
+.roombox-development__content {
+  --roombox-development__content-vertical-shift-factor: -412;
+  --roombox-development__content-width: 100vw;
+  position: absolute;
+  top: calc(var(--roombox-development__content-vertical-shift-factor) * (var(--roombox-development__content-width) - 320px) / 768);
+  left: 0;
+  z-index: -1;
+  width: 100%;
+
+  @media (min-width: $m-min-width) {
+    --roombox-development__content-vertical-shift-factor: -350;
+  }
+
+  @media (min-width: $development-image-max-width) {
+    --roombox-development__content-width: #{$development-image-max-width};
+  }
+}
+
+.roombox-development__image {
+  @include margin-hor;
+  width: 100%;
+  max-width: $development-image-max-width;
+  height: auto;
 }
